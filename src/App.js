@@ -8,11 +8,11 @@ async function postSong({ song }) {
   formData.append("song", song);
 
   const result = await axios
-    .post("https://monty-test-aws-s3.herokuapp.com/songs", formData, {
+    .post("http://monty-test-aws-s3.herokuapp.com/songs", formData, {
       headers: { "Content-Type": "multipart/form-data" },
     })
     .then((res) => {
-      alert(res.data);
+      alert(res.data["success"]);
     });
   return result.data;
 }
