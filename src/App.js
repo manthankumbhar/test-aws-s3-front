@@ -12,7 +12,7 @@ async function postSong({ song }) {
       headers: { "Content-Type": "multipart/form-data" },
     })
     .then((res) => {
-      alert(res.data["success"]);
+      alert(`https://monty-test-aws-s3.herokuapp.com/songs/${res.data["success"]}`);
     });
   return result.data;
 }
